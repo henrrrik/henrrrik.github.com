@@ -1,0 +1,18 @@
+---
+layout: default
+title: Henrik Sjökvist
+---
+
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h1>Projects</h1>
+  <ul class="posts">
+    <li><a href="http://github.com/henrrrik/Safari960/">Safari960:</a> A grid overlay extension for Safari.</li>
+ </ul>
+</div>
