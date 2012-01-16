@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: Using the HTML5 <video> tag with a Flash fallback
+title: Using the HTML5 &lt;video&gt; tag with a Flash fallback
 created: 1235696691
 ---
 The HTML5 `<video>` tag makes it possible to embed video clips in web pages much like how the `<img>` tag works for images. The browser itself provides the playback functionality without any need for plugins like Quicktime or Flash.
