@@ -203,6 +203,9 @@ Primary styles
 body {
   color: #222;
   font: 1em/1.5em Georgia, Times, serif;
+  background-image url(/images/crowd.svg);
+  background-position: center bottom;
+  background-size: 100% auto;
 }
 
 h1 {
