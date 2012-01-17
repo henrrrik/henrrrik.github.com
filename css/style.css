@@ -203,9 +203,14 @@ Primary styles
 body {
   color: #222;
   font: 1em/1.5em Georgia, Times, serif;
-  background: #dfccbb url(/images/crowd.svg) no-repeat bottom center;
-  background-size: 100% auto;
+  background-color: #dfccbb;
 }
+
+img.background {
+  width: 100%;
+  height: auto;
+}
+
 
 h1 {
   font-size: 1.5em;
