@@ -218,7 +218,7 @@ h1 {
 
 #container {
   max-width: 960px;
-  margin:50px auto;
+  margin: 50px auto 0 auto;
 }
 
 header, #main {
