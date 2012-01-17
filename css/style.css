@@ -204,11 +204,8 @@ body {
   color: #222;
   font: 1em/1.5em Georgia, Times, serif;
   background-color: #dfccbb;
-}
-
-img.background {
-  width: 100%;
-  height: auto;
+  background: #fefefe url(/images/crowd.png) repeat-x center bottom;
+  padding-bottom: 535px;
 }
 
 
