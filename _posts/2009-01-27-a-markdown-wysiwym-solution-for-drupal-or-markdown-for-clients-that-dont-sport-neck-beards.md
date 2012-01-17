@@ -3,7 +3,7 @@ layout: post
 title: "A Markdown WYSIWYM solution for Drupal (or: Markdown for clients that don't sport neck beards)"
 created: 1233049772
 ---
-<span class="update">**UPDATE: This project was removed from drupal.org because the security team had concerns about using a client-side markdown parser. I didn't share those concerns (nor, apparently, do GitHub and StackExchange who are both using Showdown.js), but whatever, [the Dude abides](http://www.youtube.com/watch?v=K2PPgcNjols).**</span>
+<ins>**UPDATE: This project was removed from drupal.org because the security team had concerns about using a client-side markdown parser. I didn't share those concerns (nor, apparently, do GitHub and StackExchange who are both using Showdown.js), but whatever, [the Dude abides](http://www.youtube.com/watch?v=K2PPgcNjols).**</ins>
 
 WYSIWYG editors like FCKeditor and TinyMCE are popular, but in some ways they do more harm than good.
 
