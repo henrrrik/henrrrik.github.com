@@ -9,23 +9,26 @@ In order get around this problem I whipped up a jQuery snippet that dynamically 
 
 This goes into `template.php`:
 
-    drupal_add_js(path_to_theme() .'/fancysearch.js', 'theme');
+{% highlight javascript %}
+drupal_add_js(path_to_theme() .'/fancysearch.js', 'theme');
+{% endhighlight %}
 
 This goes into `fancysearch.js` in your theme folder:
 
-    Drupal.behaviors.fancySearch = function(context) {
-      if (jQuery.browser.safari) {
-        // jQuery 1.2.x doesn't support type alteration.
-        var input = document.getElementById('edit-search-block-form-1');
-        input.type = 'search';
-        $('#edit-search-block-form-1').attr({ 
-                  autosave: 'net.henriksjokvist.search',
-                  results: '9',
-                });
-        $('#block-search-0 :submit').hide();
-      }
-    };
-    
+{% highlight javascript %}
+Drupal.behaviors.fancySearch = function(context) {
+  if (jQuery.browser.safari) {
+    // jQuery 1.2.x doesn't support type alteration.
+    var input = document.getElementById('edit-search-block-form-1');
+    input.type = 'search';
+    $('#edit-search-block-form-1').attr({ 
+              autosave: 'net.henriksjokvist.search',
+              results: '9',
+            });
+    $('#block-search-0 :submit').hide();
+  }
+};
+{% endhighlight %}
 You will probably need to change the ids `#block-search-0` (the form's containing `div`) and `#edit-search-block-form-1` (the id of the `input` field) to whatever ids your theme uses.
 `autosave` is the name under which the search history is stored and should be unique for your site, `results` is the number of past searches to remember and `placeholder` is the placeholder text inside the field.
 
