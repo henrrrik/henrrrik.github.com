@@ -9,8 +9,9 @@ One idea was to add a `module me <query>` command that searches for modules. Unf
 
 I wrote a little [Sinatra](http://www.sinatrarb.com/) app called [Module Puppy](http://modulepuppy.heroku.com) that pulls down and parses relevant data from this XML file and makes it available via a simple JSON API. The app is hosted on [Heroku](http://www.heroku.com/) which uses PostgreSQL as the default database. This meant that I could use the very nice multi-column search feature in PostgreSQL (easy with the [texticle](https://github.com/tenderlove/texticle) gem).
 
-The Hubot talks to the Sinatra app using [a small CoffeeScript plugin](https://github.com/github/hubot-scripts/blob/master/src/scripts/modulepuppy.coffee),
-part of the [hubot-scripts](https://github.com/github/hubot-scripts) collection 
+Hubot talks to the Sinatra app using [a small CoffeeScript plugin](https://github.com/github/hubot-scripts/blob/master/src/scripts/modulepuppy.coffee),
+part of the [hubot-scripts](https://github.com/github/hubot-scripts) community scripts collection. 
+
 This makes Hubot listen for the phrase:
 
     there's a module for <something>
