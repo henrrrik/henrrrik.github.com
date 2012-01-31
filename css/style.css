@@ -244,9 +244,11 @@ ul.posts {
   padding-left: 0;
 }
 
-div.highlight {
+code {
   font-size:  0.8em;
   background-color: rgb(245,245,245);
+}
+code pre {
   padding:  5px 20px;
 }
 
