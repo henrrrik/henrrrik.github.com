@@ -244,19 +244,27 @@ ul.posts {
   padding-left: 0;
 }
 
-code {
-  font-size:  0.8em;
-  background-color: rgb(245,245,245);
+#post {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
 }
-code pre {
-  padding:  5px 20px;
+
+#post h2, #post h3 {
+  margin-top: 2em;
 }
 
 /*
  *  Syntax highlighting
  */
 
-.highlight  { background: #ffffff; }
+code {
+  font-size:  0.8em;
+}
+div.highlight , pre {
+  padding: 0 5px;
+  background-color: #ececec;
+}
+
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
