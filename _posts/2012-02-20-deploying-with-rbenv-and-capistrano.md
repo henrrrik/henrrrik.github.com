@@ -6,7 +6,7 @@ created: 1329765756
 
 I've recently decided to move away from [RVM](https://rvm.beginrescueend.com/) in favor of [rbenv](https://github.com/sstephenson/rbenv). I thought RVM was a bit too finicky to use in production and I wanted something simpler that I could wrap my head around.
 
-This post is more or less an attempt to collect what I figured out from reading [an issue thread on GitHub](https://github.com/sstephenson/rbenv/issues/101), George Ornbo's [great post about rbenv](http://shapeshed.com/using-rbenv-to-manage-rubies/) and [the rbenv wiki page on deployment](https://github.com/sstephenson/rbenv/wiki/Using-rbenv-in-production#wiki-method1).
+This post is more or less an attempt to collect what I figured out from reading [an issue thread on GitHub](https://github.com/sstephenson/rbenv/issues/101), George Ornbo's [great post about rbenv](http://shapeshed.com/using-rbenv-to-manage-rubies/) and the [rbenv wiki page on deployment](https://github.com/sstephenson/rbenv/wiki/Using-rbenv-in-production#wiki-method1).
 
 ## On the server
 
@@ -72,8 +72,8 @@ gem 'bundler', version
 load Gem.bin_path('bundler', 'bundle', version)
 {% endhighlight %}
 
-Since the `.profile` `PATH` settings we added earlier won't get run by Capistrano we need to add our rbenv paths to our `deploy.rb`. 
-Note we add the `shims` folder directly here instead of running `rbenv init -`. It's easier and autocomplete is wasted on Capistrano.
+Since the `.profile` `PATH` settings we added earlier won't get run by Capistrano we need to add the rbenv paths to our `deploy.rb`. 
+Note that we add the `shims` folder directly here instead of running `rbenv init -`. It's easier and autocomplete is wasted on Capistrano.
 
 {% highlight ruby %}
 set :default_environment, {
