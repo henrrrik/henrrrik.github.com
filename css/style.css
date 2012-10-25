@@ -253,6 +253,18 @@ ul.posts {
   margin-top: 2em;
 }
 
+a {
+  color: rgb(201, 62, 62);
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  background-color: rgb(215, 245, 255);
+}
+
 /*
  *  Syntax highlighting
  */
