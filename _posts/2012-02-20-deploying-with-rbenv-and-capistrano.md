@@ -2,11 +2,14 @@
 layout: post
 title: "Deploying with rbenv and Capistrano"
 created: 1329765756
+updated: 1357571486
 ---
+
+*UPDATE:* I've updated the post to reflect changes in rbenv 0.4.0.
 
 I've recently decided to move away from [RVM](https://rvm.beginrescueend.com/) in favor of [rbenv](https://github.com/sstephenson/rbenv). I thought RVM was a bit too finicky to use in production and I wanted something simpler that I could wrap my head around.
 
-This post is more or less an attempt to collect what I figured out from reading [an issue thread on GitHub](https://github.com/sstephenson/rbenv/issues/101), George Ornbo's [great post about rbenv](http://shapeshed.com/using-rbenv-to-manage-rubies/) and the [rbenv wiki page on deployment](https://github.com/sstephenson/rbenv/wiki/Using-rbenv-in-production#wiki-method1).
+This post is more or less an attempt to collect what I figured out from reading [an issue thread on GitHub](https://github.com/sstephenson/rbenv/issues/101), George Ornbo's [great post about rbenv](http://shapeshed.com/using-rbenv-to-manage-rubies/) and the [rbenv wiki page on deployment](https://github.com/sstephenson/rbenv/wiki/Deploying-with-rbenv).
 
 ## On the server
 
@@ -23,12 +26,12 @@ Reload the profile, install one or more rubies and then rehash to refresh
 the shims:
 
     $ source ~/.profile
-    $ rbenv install 1.9.3-p125
+    $ rbenv install 1.9.3-p327
     $ rbenv rehash
 
 Set your new rbenv ruby as the new system-wide default ruby for this user:
 
-    $ rbenv global 1.9.3-p125
+    $ rbenv global 1.9.3-p327
 
 Now it's time to go ahead and install your Passenger, Unicorn, or what have you.
 
@@ -40,12 +43,11 @@ Now, let's turn our attention to Capistrano and our `deploy.rb`.
 We want Bundler to handle our gems and we want it to package everything
 locally with the app. The `--binstubs` flag means any gem executables will be added
 to `<app>/bin` and the `--shebang ruby-local-exec` option makes sure we'll use the
-ruby version defined in the `.rbenv-version` in the app root. Note that he
-`--shebang` flag requires Bundler 1.1.
+ruby version defined in the `.ruby-version` in the app root.
 
 {% highlight ruby %}
 require "bundler/capistrano"
-set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
+set :bundle_flags, "--deployment --quiet --binstubs"
 {% endhighlight %}
 
 If you don't want to use a globally installed Bundler, you need to add a
