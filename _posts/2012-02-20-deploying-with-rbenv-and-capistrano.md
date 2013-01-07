@@ -42,8 +42,7 @@ Now, let's turn our attention to Capistrano and our `deploy.rb`.
 
 We want Bundler to handle our gems and we want it to package everything
 locally with the app. The `--binstubs` flag means any gem executables will be added
-to `<app>/bin` and the `--shebang ruby-local-exec` option makes sure we'll use the
-ruby version defined in the `.ruby-version` in the app root.
+to `<app>/bin`.
 
 {% highlight ruby %}
 require "bundler/capistrano"
@@ -60,7 +59,7 @@ set (:bundle_cmd) { "#{release_path}/bin/bundle" }
 The binstub itself (`<app>/bin/bundle`) should look like this:
 
 {% highlight ruby %}
-#!/usr/bin/env ruby-local-exec
+#!/usr/bin/env ruby
 
 require 'rubygems'
 version = ">= 0"
